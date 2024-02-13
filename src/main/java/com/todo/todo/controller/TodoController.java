@@ -64,33 +64,33 @@ public class TodoController {
         // Return the list of todos in the response
         return ResponseEntity.ok(todos);
     }
-    @GetMapping
-    public ResponseEntity<List<Todo>> getAllTodos() {
-        List<Todo> todos = todoService.getAllTodos();
-        return new ResponseEntity<>(todos, HttpStatus.OK);
-    }
-
-    @PostMapping
-    public ResponseEntity<Todo> createTodo(@RequestBody Todo todo) {
-        Todo createdTodo = todoService.createOrUpdateTodo(todo);
-        return new ResponseEntity<>(createdTodo, HttpStatus.CREATED);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Todo> getTodoById(@PathVariable Long id) {
-        Todo todo = todoService.getTodoById(id);
-        return new ResponseEntity<>(todo, HttpStatus.OK);
-    }
-    @PutMapping("/{id}")
-    public ResponseEntity<Todo> updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
-        todo.setId(id);
-        Todo updatedTodo = todoService.createOrUpdateTodo(todo);
-        return new ResponseEntity<>(updatedTodo, HttpStatus.OK);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteTodo(@PathVariable Long id) {
-        todoService.deleteTodoById(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+//    @GetMapping
+//    public ResponseEntity<List<Todo>> getAllTodos() {
+//        List<Todo> todos = todoService.getAllTodos();
+//        return new ResponseEntity<>(todos, HttpStatus.OK);
+//    }
+//
+//    @PostMapping
+//    public ResponseEntity<Todo> createTodo(@RequestBody Todo todo) {
+//        Todo createdTodo = todoService.createOrUpdateTodo(todo);
+//        return new ResponseEntity<>(createdTodo, HttpStatus.CREATED);
+//    }
+//
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Todo> getTodoById(@PathVariable Long id) {
+//        Todo todo = todoService.getTodoById(id);
+//        return new ResponseEntity<>(todo, HttpStatus.OK);
+//    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<Todo> updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
+//        todo.setId(id);
+//        Todo updatedTodo = todoService.createOrUpdateTodo(todo);
+//        return new ResponseEntity<>(updatedTodo, HttpStatus.OK);
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteTodo(@PathVariable Long id) {
+//        todoService.deleteTodoById(id);
+//        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//    }
 }
