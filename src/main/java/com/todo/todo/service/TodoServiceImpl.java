@@ -1,5 +1,6 @@
 package com.todo.todo.service;
 
+import com.todo.todo.entity.User;
 import com.todo.todo.exception.ResourceNotFoundException;
 import com.todo.todo.entity.Todo;
 import com.todo.todo.repository.TodoRepository;
@@ -37,6 +38,11 @@ public class TodoServiceImpl implements TodoService {
             throw new ResourceNotFoundException("Todo not found with id " + id);
         }
         todoRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Todo> findByUser(User user) {
+        return todoRepository.findByUser(user);
     }
 
 }
