@@ -6,11 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
-    @Autowired
-    private UserRepo userRepository;
+public interface UserService {
 
-    public User getUserByUsername(String username) {
-        return userRepository.findByEmail(username);
-    }
+    public User getUserByUsernmae(String username);
+    public User SaveUser(User user);
+    public boolean existByUsername(String username);
+
+
+
 }

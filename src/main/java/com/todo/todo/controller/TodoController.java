@@ -28,7 +28,7 @@ public class TodoController {
         String username = authentication.getName();
 
         // Fetch user details using the UserDetailService
-        User user = userService.getUserByUsername(username);
+        User user = userService.getUserByUsernmae(username);
         if (user == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not found");
         }
@@ -50,7 +50,7 @@ public class TodoController {
         String username = authentication.getName();
 
         // Fetch user details from the database based on the username
-        User user = userService.getUserByUsername(username);
+        User user = userService.getUserByUsernmae(username);
         if (user == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not found");
         }
@@ -68,7 +68,7 @@ public class TodoController {
         String username = authentication.getName();
 
         //Fetch user details from the database based on the username
-        User user = userService.getUserByUsername(username);
+        User user = userService.getUserByUsernmae(username);
         if(user == null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not found");
         }
@@ -98,7 +98,7 @@ public class TodoController {
         String username = authentication.getName();
 
         //Fetch user details from the database based on the username
-        User user = userService.getUserByUsername(username);
+        User user = userService.getUserByUsernmae(username);
         if(user == null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not found");
         }
